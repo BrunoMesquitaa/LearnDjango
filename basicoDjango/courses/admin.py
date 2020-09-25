@@ -4,7 +4,7 @@ from django.contrib import admin
 from courses.models import Course
 
 class CouseAdmin(admin.ModelAdmin):
-    list_display = ['name','slug','descricao','update_at']
+    list_display = ['name','slug','descricao','update_at',"imagem"]
     search_fields = ['name','descricao','slug']
     prepopulated_fields = {'slug':('name',)}
 

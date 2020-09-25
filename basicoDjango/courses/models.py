@@ -13,7 +13,7 @@ class Course(models.Model):
     slug = models.SlugField('Atalho')
     descricao = models.TextField('Descrição',blank=True)
     startDate = models.DateField('Data de Inicio',null=True,blank=True)
-    imagem = models.ImageField(upload_to='images',verbose_name='Imagem',null=True,blank=True)
+    imagem = models.ImageField(upload_to='cursos/images',verbose_name='Imagem',null=True,blank=True)
     
     create_at = models.DateTimeField('Criado em ',auto_now_add=True)
     update_at = models.DateTimeField('Ultima atualização ',auto_now=True)

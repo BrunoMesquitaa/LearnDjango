@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static%}
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -12,11 +13,11 @@
 <body>
     <div class="header">
         <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-            <a class="pure-menu-heading" href="{% url 'base' %}"">SIMPLE MOOC</a>
+            <a class="pure-menu-heading" href="{% url 'coracao:base' %}"">SIMPLE MOOC</a>
             <ul>
-                <li class="pure-menu-selected"><a href="{% url 'base' %}">Início</a></li>
-                <li><a href="#">Cursos</a></li>
-                <li><a href="{% url 'contact' %}">Contato</a></li>
+                <li class="pure-menu-selected"><a href="{% url 'coracao:base' %}">Início</a></li>
+                <li><a href="{% url 'curso:curso' %}">Cursos</a></li>
+                <li><a href="{% url 'coracao:contact' %}">Contato</a></li>
             </ul>
         </div>
     </div>
