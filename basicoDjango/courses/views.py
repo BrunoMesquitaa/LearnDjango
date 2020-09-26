@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpRequest
 from courses.models import Course
+from courses.forms import ContactCourse
 
 # Create your views here.
 def courses(request):
@@ -15,4 +16,19 @@ def courses(request):
 
 def detalhes(request,title):
     course = get_object_or_404(Course,slug=title)
-    return render(request,'details.html',{"course":course})
+
+    contexto = {}
+
+    if request.method == 'POST':
+        form = ContactCourse(request.POST)
+        if form.is_valid():
+            contexto['is_valid']=True
+            print(form.data) 
+            form = ContactCourse()
+    else:
+        form = ContactCourse()
+
+    contexto['form']=form
+    contexto['course']=course
+
+    return render(request,'details.html',contexto)

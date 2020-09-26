@@ -34,7 +34,36 @@
             {% else %}
             <img src="{% static 'img/name.jpg' %}" alt="{{ course.name }}" />
             {% endif %}
+            <h4>Dúvidas?</h4>
+            <p>
+                <a href="#contato" title="" class="pure-button">Fale Conosco</a>
+            </p>
         </div>
     </div>
 </div>
+
+<div class="pure-g-r content-ribbon" id="contato">
+        <div class="pure-u-1">
+            <h3>Tire sua dúvida sobre o Curso</h3>
+            {% if is_valid %}
+                <p>ENVIADO COM SUCESSO!!</P>
+            {% endif %}
+            <form class="pure-form pure-form-aligned", method="post">
+                {% csrf_token %}
+                <fieldset>
+                    <table>
+                        <tbody>
+                            <tr>
+                                {{ form.as_table }}
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pure-controls">
+                        <button type="submit" class="pure-button pure-button-primary">Enviar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
 {% endblock %}
