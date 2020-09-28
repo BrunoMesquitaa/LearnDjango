@@ -22,8 +22,11 @@ def detalhes(request,title):
     if request.method == 'POST':
         form = ContactCourse(request.POST)
         if form.is_valid():
+            
+            form.send_mail(course)
+
             contexto['is_valid']=True
-            print(form.data) 
+            print(form.cleaned_data) 
             form = ContactCourse()
     else:
         form = ContactCourse()

@@ -6,7 +6,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('core.urls',namespace='coracao')),
-    path('cursos/', include('courses.urls',namespace='curso'))
+    path('cursos/', include('courses.urls',namespace='curso')),
+    path('conta/', include('accounts.urls',namespace='contas')),
 ]
 
 #imagens
