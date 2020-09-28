@@ -14,7 +14,7 @@ def courses(request):
 #     course = get_object_or_404(Course,pk=pk)
 #     return render(request,'details.html',{"course":course})
 
-def detalhes(request,title):
+def detalhes(request, title):
     course = get_object_or_404(Course,slug=title)
 
     contexto = {}
